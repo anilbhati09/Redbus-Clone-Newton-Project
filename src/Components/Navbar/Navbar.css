@@ -1,0 +1,43 @@
+.main-container{
+    display: flex;
+    background-color: #E6545B;
+}
+
+.first-container{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-left: 50px;
+}
+
+.first-container-item:hover{
+    color: rgb(236, 220, 220);
+}
+.first-container-item{
+    margin: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+}
+
+.profile-logo-border{
+    padding: 8px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.second-container{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-left: 750px;
+
+}
+
+.second-container-item{
+    margin: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    align-items: center;
+    color: white;
+}

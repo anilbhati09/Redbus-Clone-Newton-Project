@@ -1,0 +1,56 @@
+.main-couponbox{
+    height: 60vh;
+    align-items: center;
+    text-align: center;
+}
+
+.main-couponbox-1{
+    width: 750px;
+    height: 120px;
+    background-color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 280px;
+}
+
+.main-couponbox-1-img{
+    flex: 1;
+}
+
+.main-couponbox-1-text{
+    flex: 3;
+}
+
+.main-couponbox-2{
+    display: flex;
+}
+
+.main-couponbox-2-container-1{
+    margin-top: 15px;
+    padding: 20px;
+    background-color: white;
+    width: 350px;
+    border: 1px rgb(44, 39, 39) solid;
+    margin-right: 15px;
+    margin-left: 300px;
+}
+
+.main-couponbox-2-container-1:hover{
+    scale: 1.05;
+    transition: 0.5s ease-in-out;
+}
+
+.main-couponbox-2-container-2{
+    margin-top: 15px;
+    padding: 20px;
+    background-color: white;
+    width: 350px;
+    border: 2px white solid;
+    border: 1px rgb(44, 39, 39) solid;
+}
+
+.main-couponbox-2-container-2:hover{
+    scale: 1.05;
+    transition: 0.5s ease-in-out;
+}

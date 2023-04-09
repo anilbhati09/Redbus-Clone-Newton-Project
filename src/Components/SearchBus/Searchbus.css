@@ -1,0 +1,56 @@
+/* .searchbus-container{
+    width: 100vw;
+    height: 65vh;
+    background: url('https://st.redbus.in/Images/INDOFFER/FESTIVE200/Hero01.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.form-container{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container-item{
+    padding: 10px;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.form-container-item-swap{
+    border: 2px white solid;
+    padding: 5px;
+    border-radius: 50%;
+    color: black;
+    background-color: white ;
+    cursor: pointer;
+}
+
+.form-container-item-submit-btn{
+    background-color: #E6545B;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    border: none;
+}
+
+.form-container-item-submit-btn:hover{
+    background-color: #f56970;
+} */
+
+/* .form-container{
+    background: url('https://st.redbus.in/Images/INDOFFER/FESTIVE200/Hero01.png');
+    background-size: cover;
+    height: 70vh;
+} */
+
+.form-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}

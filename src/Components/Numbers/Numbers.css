@@ -1,0 +1,30 @@
+.numbers-main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: blanchedalmond;
+}
+
+.numbers-main-container-2{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.numbers-main-container-2-1{
+    width: 300px;
+    height: 250px;
+    padding: 40px;
+}
+
+.number-container-h1{
+    font-weight: 500;
+    font-size: 44px;
+}
+
+.number-container-h2{
+    font-size: 30px;
+    padding: 40px;
+}

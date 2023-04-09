@@ -1,0 +1,31 @@
+.awards-main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.5px solid black;
+    margin-top: 30px;
+}
+
+.awards-main-container-1{
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.awards-main-container-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+    padding: 20px;
+    height: 350px;
+}
+
+.business-standard{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    letter-spacing: 2px;
+}

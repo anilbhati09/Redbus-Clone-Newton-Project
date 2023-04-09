@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import Advantages from "./Components/Advantages/Advantages";
+import Awards from "./Components/Awards/Awards";
+import Couponbox from "./Components/CouponBox/Couponbox";
+import Features from "./Components/Features/Features";
+import Footer from "./Components/Footer/Footer";
+import Globalpresence from "./Components/GlobalPresence/Globalpresence";
+import Navbar from "./Components/Navbar/Navbar";
+import Numbers from "./Components/Numbers/Numbers";
+import Searchbus from "./Components/SearchBus/Searchbus";
+import Topservies from "./Components/TopServices/Topservies";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar/>
+      <Searchbus/>
+      <Couponbox/>
+      <Features/>
+      <Advantages/>
+      <Awards/>
+      <Globalpresence/>
+      <Numbers/>
+      <Topservies/>
+      <Footer/>
     </div>
   );
 }
