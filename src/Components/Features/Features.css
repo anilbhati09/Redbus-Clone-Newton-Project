@@ -1,25 +1,25 @@
-.features-main-container{
+.features-main-container {
     display: flex;
-}
-
-.features-main-container-1{
+  }
+  
+  .features-main-container-1 {
     flex: 1;
     margin-left: 150px;
-}
-
-.features-main-container-1-h2{
+  }
+  
+  .features-main-container-1-h2 {
     margin-top: 100px;
     font-size: 30px;
     color: rgb(80, 74, 74);
-}
-
-.input-number{
+  }
+  
+  .input-number {
     padding: 5px;
     margin-right: 5px;
     margin-bottom: 10px;
-}
-
-.send-me-link-btn{
+  }
+  
+  .send-me-link-btn {
     padding: 5px;
     background-color: #E6545B;
     color: white;
@@ -27,9 +27,9 @@
     font-weight: 500;
     margin-bottom: 10px;
     cursor: pointer;
-}
-
-.download-store-logo{
+  }
+  
+  .download-store-logo {
     margin: 5px;
     padding: 10px;
     border: 2px solid black;
@@ -37,9 +37,18 @@
     color: white;
     background-color: rgb(43, 32, 32);
     cursor: pointer;
-}
-
-.features-main-container-2{
+  }
+  
+  .features-main-container-2 {
     flex: 1;
     margin-left: 150px;
-}
+  }
+  
+  @media (max-width: 576px) {
+    .features-main-container-1,
+    .features-main-container-2 {
+      flex: 100%;
+      margin: 0;
+    }
+  }
+  

@@ -1,28 +1,18 @@
-import Advantages from "./Components/Advantages/Advantages";
-import Awards from "./Components/Awards/Awards";
-import Couponbox from "./Components/CouponBox/Couponbox";
-import Features from "./Components/Features/Features";
-import Footer from "./Components/Footer/Footer";
-import Globalpresence from "./Components/GlobalPresence/Globalpresence";
-import Navbar from "./Components/Navbar/Navbar";
-import Numbers from "./Components/Numbers/Numbers";
-import Searchbus from "./Components/SearchBus/Searchbus";
-import Topservies from "./Components/TopServices/Topservies";
+import React from 'react';
+import Home from './Components/Home/Home';
+import { Routes, Route } from 'react-router-dom';
+import Login from './Components/Login/Login';
+import Signup from './Components/Signup/Signup';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar/>
-      <Searchbus/>
-      <Couponbox/>
-      <Features/>
-      <Advantages/>
-      <Awards/>
-      <Globalpresence/>
-      <Numbers/>
-      <Topservies/>
-      <Footer/>
-    </div>
+    <>
+    <Routes>
+      <Route path="/" exact element={<Home/>}/>
+      <Route path="/login" exact element={<Login/>}/>
+      <Route path="/signup" exact element={<Signup/>}/>
+    </Routes>
+    </>
   );
 }
 

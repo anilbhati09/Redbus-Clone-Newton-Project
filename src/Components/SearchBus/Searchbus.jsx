@@ -4,29 +4,42 @@ import { SwapOutlined } from "@ant-design/icons";
 import axios from "axios";
 import './Searchbus.css';
 
-function Homepage() {
+function SearchBus() {
   const [source, setSource] = useState("");
   const [destination, setDestination] = useState("");
   const [date, setDate] = useState(null);
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const submitHandler = async () => {
-    // console.log(source, destination, date);
-    const response = await axios.get(`https://content.newtonschool.co/v1/pr/63b70222af4f30335b4b3b9a/buses?source=${source}&destination=${destination}&date=${date}`);
-    
-    const data = response.data.map((bus) => {
-      return{
-      key: bus.id,
-      name: bus.busName,
-      departure: bus.departureTime,
-      arrival: bus.arrivalTime,
-      rating:'8/10',
-      price: bus.ticketPrice
+    setLoading(true);
+  
+    const lowercaseSource = source.toLowerCase();
+    const lowercaseDestination = destination.toLowerCase();
+  
+    const response = await axios.get(`https://content.newtonschool.co/v1/pr/63b70222af4f30335b4b3b9a/buses?source=${lowercaseSource}&destination=${lowercaseDestination}&date=${date}`);
+  
+    const buses = response.data;
+  
+    if (buses.length === 0) {
+      setData([]);
+    } else {
+      const formattedData = buses.map((bus) => {
+        return {
+          key: bus.id,
+          name: bus.busName,
+          departure: bus.departureTime,
+          arrival: bus.arrivalTime,
+          rating: '8/10',
+          price: bus.ticketPrice
+        };
+      });
+      setData(formattedData);
     }
-  });
-
-    setData(data);
+  
+    setLoading(false);
   };
+  
 
   const columns = [
     {
@@ -69,93 +82,100 @@ function Homepage() {
         compare: (a, b) => a.price - b.price,
         multiple: 1,
       },
-    }];
+    }
+  ];
 
   return (
     <div className="form-container">
       <Form className="form-wrapper">
         <div>
           <label htmlFor="from">From</label>
-        <Form.Item
+          <Form.Item
             id="from"
-            name = {"from"}
+            name={"from"}
             rules={[
-                {
-                    required: true,
-                    message: "Please input your from location.",
-                },
+              {
+                required: true,
+                message: "Please input your from location.",
+              },
             ]}
-            >
-                <Input value={source} onChange={(e) => setSource(e.target.value)}/>
-        </Form.Item>
+          >
+            <Input value={source} onChange={(e) => setSource(e.target.value)} />
+          </Form.Item>
         </div>
 
         <div>
-        <Form.Item id="swap">
-          <Button onClick={(e) => {
-          const currentSource = source;
-          const currentDestination = destination; 
-          setDestination(currentSource);
-          setSource(currentDestination);
-
-          }}
-          >
-            <SwapOutlined />
-          </Button>
-        </Form.Item>
+          <Form.Item id="swap">
+            <Button
+              onClick={() => {
+                const temp = destination;
+                setDestination(source);
+                setSource(temp);
+              }}
+            >
+              <SwapOutlined />
+            </Button>
+          </Form.Item>
         </div>
 
         <div>
           <label htmlFor="to">To</label>
-        <Form.Item
+          <Form.Item
             id="to"
-            name = {"to"}
+            name={"to"}
             rules={[
-                {
-                    required: true,
-                    message: "Please input your to location.",
-                },
+              {
+                required: true,
+                message: "Please input your to location.",
+              },
             ]}
-            >
-                <Input value={destination} onChange={(e) => setDestination(e.target.value)}/>
-        </Form.Item>
+          >
+            <Input value={destination} onChange={(e) => setDestination(e.target.value)} />
+          </Form.Item>
         </div>
 
         <div>
           <label htmlFor="date">Date</label>
-        <Form.Item>
-          <DatePicker
-            id="date" 
-            rules={[
+          <Form.Item>
+            <DatePicker
+              id="date"
+              rules={[
                 {
-                    required: true,
-                    message: "Please input date.",
+                  required: true,
+                  message: "Please input date.",
                 },
-            ]}
-            onChange={(date, dateString) => {
+              ]}
+              onChange={(date, dateString) => {
                 setDate(dateString);
-                }} />
-        </Form.Item>
+              }} />
+          </Form.Item>
         </div>
 
         <div>
           <label htmlFor="to">To</label>
-        <Form.Item>
-          <Button
-          type="primary"
-          danger 
-          htmlFor="submit"
-          onClick={submitHandler}
-          >
-           Search Buses 
-          </Button>
-        </Form.Item>
+          <Form.Item>
+            <Button
+              type="primary"
+              danger
+              htmlFor="submit"
+              onClick={submitHandler}
+            >
+              Search Buses
+            </Button>
+          </Form.Item>
         </div>
       </Form>
-      <Table columns={columns} dataSource={data}/>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        data.length === 0 ? (
+          <p></p>
+        ) : (
+          <Table columns={columns} dataSource={data} />
+        )
+      )}
     </div>
   );
 }
 
-
-export default Homepage;
+export default SearchBus;

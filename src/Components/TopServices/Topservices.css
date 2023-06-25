@@ -1,21 +1,39 @@
-.topservices-main-container-1{
+.topservices-main-container-1 {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     list-style: none;
-    justify-content: space-evenly;
-}
-
-.top-bus-routes{
-    padding: 50px 20px 50px 20px;
-}
-
-.top-bus-routes-li{
+  }
+  
+  .top-bus-routes {
+    padding: 30px 10px;
+  }
+  
+  .top-bus-routes-li {
     cursor: pointer;
     margin-top: 10px;
-}
-
-.topservices-main-container-2{
-    margin:50px 70px;
+  }
+  
+  .topservices-main-container-2 {
+    margin: 30px;
     cursor: pointer;
     letter-spacing: 0.5px;
     font-weight: 500;
-}
+  }
+  
+  @media screen and (max-width: 480px) {
+    .topservices-main-container-1 {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .top-bus-routes {
+      padding: 20px 10px;
+    }
+  
+    .topservices-main-container-2 {
+      margin: 20px;
+      text-align: center;
+    }
+  }
+  

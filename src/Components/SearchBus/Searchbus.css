@@ -48,9 +48,16 @@
     height: 70vh;
 } */
 
-.form-wrapper{
+.form-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
-}
+  }
+  
+  @media screen and (max-width: 480px) {
+    .form-wrapper {
+      flex-direction: column;
+    }
+  }
+  
